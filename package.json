@@ -1,8 +1,13 @@
 {
   "name": "kani-mcp-server",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Read-only MCP server for the WaniKani API v2",
-  "keywords": ["wanikani", "japanese", "mcp", "model-context-protocol"],
+  "keywords": [
+    "wanikani",
+    "japanese",
+    "mcp",
+    "model-context-protocol"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Alexxanddr/kani-mcp-server.git"
@@ -20,8 +25,14 @@
   },
   "type": "module",
   "main": "dist/index.js",
-  "bin": { "kani-mcp-server": "dist/index.js" },
-  "files": ["dist", "README.md", "LICENSE"],
+  "bin": {
+    "kani-mcp-server": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "rm -rf dist && tsc --emitDeclarationOnly && esbuild src/index.ts --bundle --platform=node --format=esm --packages=bundle --outfile=dist/index.js",
     "dev": "tsx src/index.ts",
@@ -31,7 +42,9 @@
     "check": "npm run type-check && npm test && npm run build",
     "prepack": "npm run check"
   },
-  "engines": { "node": ">=18" },
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.25.0",
     "zod": "^4.2.1"
