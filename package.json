@@ -1,0 +1,32 @@
+{
+  "name": "kani-mcp-server",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Read-only MCP server for the WaniKani API v2",
+  "keywords": ["wanikani", "japanese", "mcp", "model-context-protocol"],
+  "license": "UNLICENSED",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": { "kani-mcp-server": "dist/index.js" },
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "rm -rf dist && tsc --emitDeclarationOnly && esbuild src/index.ts --bundle --platform=node --format=esm --packages=bundle --outfile=dist/index.js",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "test": "tsx --test test/**/*.test.ts",
+    "type-check": "tsc --noEmit",
+    "check": "npm run type-check && npm test && npm run build",
+    "prepack": "npm run check"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.25.0",
+    "zod": "^4.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "esbuild": "^0.28.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  }
+}
