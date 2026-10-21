@@ -8,6 +8,6 @@ Include the affected version, impact, minimal reproduction, and suggested mitiga
 
 ## Supported versions
 
-The project has not published a supported release. Security support and response timelines will be defined before the first public release.
+Security fixes are provided for the latest published minor release. Older releases may be asked to upgrade before receiving a fix. No response-time guarantee is currently offered.
 
 For the technical threat model and credential guidance, see [docs/SECURITY.md](docs/SECURITY.md).

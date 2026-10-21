@@ -18,7 +18,34 @@ The server runs locally over stdio. It does not store data, expose an HTTP servi
 
 Keep the token secret. It grants access to account and study data.
 
-## Install and run locally
+## Install
+
+The simplest MCP configuration runs the published package directly with `npx`:
+
+```json
+{
+  "mcpServers": {
+    "wanikani": {
+      "command": "npx",
+      "args": ["-y", "kani-mcp-server@latest"],
+      "env": {
+        "WANIKANI_API_TOKEN": "your-read-only-token"
+      }
+    }
+  }
+}
+```
+
+Alternatively, install the executable globally:
+
+```sh
+npm install --global kani-mcp-server
+kani-mcp-server
+```
+
+Restart the MCP client after changing its configuration. Prefer the client's secure secret facility, when available, over writing a token into a JSON file.
+
+## Run from source
 
 ```sh
 git clone https://github.com/Alexxanddr/kani-mcp-server.git
@@ -30,11 +57,7 @@ npm run build
 node --env-file=.env dist/index.js
 ```
 
-The process communicates via MCP on stdin/stdout, so an empty terminal after startup is normal.
-
-## MCP client configuration
-
-Build the project first, then add it to any stdio-compatible MCP client. Replace the path and token:
+To configure an MCP client against a source checkout, replace the path and token:
 
 ```json
 {
@@ -50,7 +73,7 @@ Build the project first, then add it to any stdio-compatible MCP client. Replace
 }
 ```
 
-Restart the MCP client after changing its configuration. Prefer the client's secure secret facility, when available, over writing a token into a JSON file.
+The process communicates via MCP on stdin/stdout, so an empty terminal after startup is normal.
 
 ## Tools
 
@@ -121,6 +144,6 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md), [architecture](docs/ARCHITECTURE.md), a
 
 ## License and distribution
 
-This project is available under the [MIT License](LICENSE). The npm name `kani-mcp-server` was available when last checked, but publishing remains intentionally disabled until the first release is approved. See [publishing](docs/PUBLISHING.md).
+This project is available under the [MIT License](LICENSE) and is packaged for the public npm registry as `kani-mcp-server`. GitHub releases publish matching package versions through npm Trusted Publishing; see [publishing](docs/PUBLISHING.md) for the one-time setup and release procedure.
 
 WaniKani is a trademark of Tofugu LLC. This independent project is not affiliated with, endorsed by, or sponsored by WaniKani or Tofugu.

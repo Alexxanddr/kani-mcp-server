@@ -1,7 +1,6 @@
 {
   "name": "kani-mcp-server",
   "version": "0.1.0",
-  "private": true,
   "description": "Read-only MCP server for the WaniKani API v2",
   "keywords": ["wanikani", "japanese", "mcp", "model-context-protocol"],
   "repository": {
@@ -15,6 +14,10 @@
     "url": "https://github.com/Alexxanddr"
   },
   "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "type": "module",
   "main": "dist/index.js",
   "bin": { "kani-mcp-server": "dist/index.js" },
