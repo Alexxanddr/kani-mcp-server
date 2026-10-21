@@ -4,16 +4,26 @@
   "private": true,
   "description": "Read-only MCP server for the WaniKani API v2",
   "keywords": ["wanikani", "japanese", "mcp", "model-context-protocol"],
-  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alexxanddr/kani-mcp-server.git"
+  },
+  "homepage": "https://github.com/Alexxanddr/kani-mcp-server#readme",
+  "bugs": "https://github.com/Alexxanddr/kani-mcp-server/issues",
+  "author": {
+    "name": "Alessandro Sottile",
+    "url": "https://github.com/Alexxanddr"
+  },
+  "license": "MIT",
   "type": "module",
   "main": "dist/index.js",
   "bin": { "kani-mcp-server": "dist/index.js" },
-  "files": ["dist", "README.md"],
+  "files": ["dist", "README.md", "LICENSE"],
   "scripts": {
     "build": "rm -rf dist && tsc --emitDeclarationOnly && esbuild src/index.ts --bundle --platform=node --format=esm --packages=bundle --outfile=dist/index.js",
     "dev": "tsx src/index.ts",
     "start": "node dist/index.js",
-    "test": "tsx --test test/**/*.test.ts",
+    "test": "tsx --test test/*.test.ts",
     "type-check": "tsc --noEmit",
     "check": "npm run type-check && npm test && npm run build",
     "prepack": "npm run check"

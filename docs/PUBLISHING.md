@@ -2,14 +2,13 @@
 
 ## Current status
 
-Publishing is intentionally disabled by `private: true`, `license: UNLICENSED`, and placeholder-free repository metadata. The project must not be published until the decisions below are resolved.
+Publishing is intentionally disabled by `private: true`. The project uses the MIT License, GitHub metadata points to `Alexxanddr/kani-mcp-server`, and the npm name returned 404 (available) on 2026-10-21. Availability is not reserved until publication.
 
 ## Maintainer decisions
 
 1. Confirm the product/repository/package name complies with WaniKani's branding rules. `Kani MCP Server` avoids the full mark, but final approval belongs to the maintainer and, if needed, Tofugu.
-2. Choose an open-source license. MIT is simple and permissive; Apache-2.0 adds an explicit patent grant; MPL-2.0 requires modifications to covered files to remain open. Add the exact license text and update `package.json`.
-3. Reserve an available npm package name and add real `repository`, `homepage`, `bugs`, and author/maintainer metadata.
-4. Decide the private security reporting channel and supported-version policy.
+2. Decide the private security reporting channel and supported-version policy.
+3. Explicitly approve the first release and remove `private: true` only immediately before publishing.
 
 ## Recommended distribution
 

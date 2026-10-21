@@ -21,7 +21,7 @@ Keep the token secret. It grants access to account and study data.
 ## Install and run locally
 
 ```sh
-# From a local checkout:
+git clone https://github.com/Alexxanddr/kani-mcp-server.git
 cd kani-mcp-server
 npm ci
 cp .env.example .env
@@ -119,8 +119,8 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md), [architecture](docs/ARCHITECTURE.md), a
 - No automatic multi-page aggregation, caching, resources, or prompts.
 - API response objects are passed through unchanged, so upstream additions appear without a package release.
 
-## Project status and distribution
+## License and distribution
 
-The package is private and unlicensed until the maintainer chooses a public package name, repository URL, and open-source license. See [publishing](docs/PUBLISHING.md). Do not publish the current package.
+This project is available under the [MIT License](LICENSE). The npm name `kani-mcp-server` was available when last checked, but publishing remains intentionally disabled until the first release is approved. See [publishing](docs/PUBLISHING.md).
 
 WaniKani is a trademark of Tofugu LLC. This independent project is not affiliated with, endorsed by, or sponsored by WaniKani or Tofugu.
