@@ -1,0 +1,36 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.alexxanddr/kani-mcp-server",
+  "title": "Kani MCP Server",
+  "description": "Read-only access to WaniKani progress and study data through MCP.",
+  "websiteUrl": "https://github.com/Alexxanddr/kani-mcp-server",
+  "repository": {
+    "url": "https://github.com/Alexxanddr/kani-mcp-server",
+    "source": "github"
+  },
+  "version": "0.1.1",
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "kani-mcp-server",
+      "version": "0.1.1",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "WANIKANI_API_TOKEN",
+          "description": "Read-only WaniKani API v2 personal access token",
+          "isRequired": true,
+          "isSecret": true
+        },
+        {
+          "name": "WANIKANI_API_BASE_URL",
+          "description": "WaniKani API v2 base URL",
+          "default": "https://api.wanikani.com/v2"
+        }
+      ]
+    }
+  ]
+}

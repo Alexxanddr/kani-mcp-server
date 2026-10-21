@@ -1,6 +1,7 @@
 {
   "name": "kani-mcp-server",
   "version": "0.1.1",
+  "mcpName": "io.github.alexxanddr/kani-mcp-server",
   "description": "Read-only MCP server for the WaniKani API v2",
   "keywords": [
     "wanikani",

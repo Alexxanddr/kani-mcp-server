@@ -26,3 +26,18 @@ jobs:
         run: test "v$(node -p "require('./package.json').version")" = "$GITHUB_REF_NAME"
       - run: npm ci
       - run: npm publish
+      - name: Set MCP Registry version
+        run: |
+          version=$(node -p "require('./package.json').version")
+          jq --arg version "$version" '.version = $version | .packages[0].version = $version' server.json > server.tmp
+          mv server.tmp server.json
+      - name: Install MCP Registry publisher
+        run: |
+          curl --fail --location --silent --show-error \
+            https://github.com/modelcontextprotocol/registry/releases/download/v1.8.1/mcp-publisher_linux_amd64.tar.gz \
+            | tar xz mcp-publisher
+      - name: Publish to MCP Registry
+        run: |
+          ./mcp-publisher validate server.json
+          ./mcp-publisher login github-oidc
+          ./mcp-publisher publish server.json

@@ -1,5 +1,7 @@
 # Kani MCP Server
 
+<!-- mcp-name: io.github.alexxanddr/kani-mcp-server -->
+
 A small, read-only [Model Context Protocol](https://modelcontextprotocol.io/) server that gives MCP clients access to a user's WaniKani progress and WaniKani reference data through the official API v2.
 
 It can answer questions such as:
