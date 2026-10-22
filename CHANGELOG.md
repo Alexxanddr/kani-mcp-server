@@ -4,6 +4,10 @@ All notable changes will be documented here. Releases follow Semantic Versioning
 
 ## Unreleased
 
+## 0.1.4 - 2026-10-22
+
+- Corrected the case-sensitive GitHub namespace used by the MCP Registry.
+
 ## 0.1.3 - 2026-10-22
 
 - Initial read-only MCP server for WaniKani API v2.

@@ -20,7 +20,7 @@ Trusted publishing uses short-lived OIDC credentials, requires no `NPM_TOKEN` se
 
 ## MCP Registry
 
-The same release workflow publishes `server.json` to the official MCP Registry after npm accepts the package. The registry entry is `io.github.alexxanddr/kani-mcp-server`; `package.json` and the packaged README contain that same `mcpName` so the registry can verify package ownership.
+The same release workflow publishes `server.json` to the official MCP Registry after npm accepts the package. The registry entry is `io.github.Alexxanddr/kani-mcp-server`; `package.json` and the packaged README contain that same `mcpName` so the registry can verify package ownership.
 
 No MCP Registry secret is required. GitHub OIDC authenticates the repository namespace through the workflow's `id-token: write` permission. The Registry is currently in preview, so its schema or stored data may change before general availability.
 
