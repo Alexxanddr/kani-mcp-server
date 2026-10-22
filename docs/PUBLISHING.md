@@ -34,6 +34,6 @@ npm is the primary fit because the artifact is a Node.js executable and stdio MC
 2. Run `npm ci`, `npm run check`, and `npm publish --dry-run` in a clean checkout.
 3. Inspect the archive contents and perform the manual read-only smoke test in `TESTING.md`.
 4. Commit the version, tag it as `vX.Y.Z`, and push the commit and tag.
-5. Publish a GitHub release for that exact tag. `.github/workflows/publish.yml` verifies that the tag equals the package version, runs the package checks through `prepack`, publishes to npm using OIDC, then publishes the same version to the MCP Registry.
+5. Publish a GitHub release for that exact tag. `.github/workflows/publish.yml` verifies that the release tag and registry metadata match the package version, publishes to npm using OIDC, waits for registry visibility, then publishes the same version to the MCP Registry.
 
-The workflow runs only when a maintainer publishes a GitHub release. Registry submission, image deployment, and remote pushes are not otherwise automated.
+The workflow can also be retried manually with `workflow_dispatch`. Manual runs still enforce package/registry metadata consistency, skip an npm version that is already present, and republish its MCP Registry metadata. Registry submission, image deployment, and remote pushes are not otherwise automated.

@@ -9,3 +9,4 @@ All notable changes will be documented here. Releases follow Semantic Versioning
 - Prepared the package for public npm installation with `npx`.
 - Added npm Trusted Publishing automation for GitHub releases.
 - Added metadata and automated publication for the official MCP Registry.
+- Made npm and MCP Registry publication safely retryable.
